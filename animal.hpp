@@ -8,8 +8,8 @@
 
 //constants that definte what make a low, medium, and high attribute value
 const int low_att = 4;
-const int med_att = 4;
-const int high_att = 4;
+const int med_att = 7;
+const int high_att = 10;
 
 class Animal {
 public:

@@ -5,35 +5,42 @@ using std::endl;
 
 Animal::Animal(Species _species) : species(_species) {
     //set attributes based on species
-    switch (static_cast<int>(_species)) {
-        case 1:
+    switch (_species) {
+        case Fox:
             intelligence = med_att;
             vision = med_att;
             strength = med_att;
-        case 2:
+            break;
+        case Elephant:
             intelligence = high_att;
             vision = low_att;
             strength = med_att;
-        case 3:
+            break;
+        case Deer:
             intelligence = high_att;
             vision = med_att;
             strength = low_att;
-        case 4:
+            break;
+        case Wildcat:
             intelligence = med_att;
             vision = high_att;
             strength = low_att;
-        case 5:
+            break;
+        case Owl:
             intelligence = low_att;
             vision = high_att;
             strength = med_att;
-        case 6:
+            break;
+        case Bear:
             intelligence = low_att;
             vision = med_att;
             strength = high_att;
-        case 7:
+            break;
+        case Lion:
             intelligence = med_att;
             vision = low_att;
             strength = high_att;
+            break;
         default:
             //default animal values
             intelligence = med_att;
