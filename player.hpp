@@ -5,15 +5,13 @@
 #include <string>
 #include "animal.hpp"
 
-using std::string;
-
 //player inherits from animal
 class Player : public Animal {
 public:
-    Player(string _name, Species _species) : Animal(_species), name(_name), health(100), hunger(100) {}
+    Player(std::string _name, Species _species) : Animal(_species), name(_name), health(100), hunger(100) {}
     void print() const; //overriding parent's implementation
 private:
-    string name;
+    std::string name;
     int health;
     int hunger;
     //inventory of food: a data structure of food objects

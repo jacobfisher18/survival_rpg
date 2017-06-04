@@ -1,3 +1,6 @@
+#include <string>
+#include <vector>
+
 enum Species {
     Fox = 1,
     Elephant = 2,

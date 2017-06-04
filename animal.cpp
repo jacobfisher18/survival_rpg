@@ -43,8 +43,23 @@ Animal::Animal(Species _species) : species(_species) {
 }
 
 void Animal::print() const {
-    cout << "Species: " << species << endl;
+    cout << "Species: " << get_species_string(species) << endl;
     cout << "Intelligence: " << intelligence << endl;
     cout << "Vision: " << vision << endl;
     cout << "Strength: " << strength << endl;
+}
+
+std::string Animal::get_species_string(Species species) const {
+    std::string all_species[7] = {
+        "Fox",
+        "Elephant",
+        "Deer",
+        "Wildcat",
+        "Owl",
+        "Bear",
+        "Lion"
+    };
+    
+    return all_species[species - 1]; //implicitly casts species to int, shift down 1 because array is 0 indexed
+    
 }

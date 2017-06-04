@@ -15,6 +15,7 @@ class Animal {
 public:
     Animal(Species _species);
     void print() const; //print species and attributes
+    std::string get_species_string(Species species) const; //get species string given enum
     //void fight(Animal& enemy);
 protected:
     //protected variables can be accessed by the child class

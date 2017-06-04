@@ -5,7 +5,6 @@
 using std::cout;
 using std::endl;
 using std::cin;
-using std::string;
 
 //global variables
 //time of day
@@ -16,7 +15,7 @@ int main() {
     //Display start menu
     cout << "SURVIVAL RPG" << endl;
     cout << "What is your animal name?" << endl;
-    string name;
+    std::string name;
     cin >> name;
     cout << "Select a species (enter number 1-4): " << endl;
     cout << "\t 1. Fox: (medium intelligence, medium vision, medium strength)" << endl;
