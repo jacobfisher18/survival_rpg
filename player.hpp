@@ -7,14 +7,14 @@
 
 using std::string;
 
-class player {
+class Player {
 public:
-    player(string _name) : name(_name), health(100), hunger(100) { } //covered in class: member initialization list, default arguments, etc.
+    Player(string _name, int species_number);
 private:
     string name;
     int health;
     int hunger;
-    animal my_animal; //manages strength, intelligence, vision attributes
+    Animal* my_animal; //manages strength, intelligence, vision attributes
     //inventory of food: a data structure of food objects
     //shelter: an object with name, description, sleep value
 };

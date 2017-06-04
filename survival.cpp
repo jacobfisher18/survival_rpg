@@ -31,7 +31,7 @@ int main() {
     cin >> species_number;
     
     //Create player object based on name, species_number
-    player my_player(name);
+    //Player my_player(name, species_number);
     
     //Show intro tutorial
     
