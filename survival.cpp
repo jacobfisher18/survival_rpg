@@ -29,9 +29,10 @@ int main() {
     
     int species_number;
     cin >> species_number;
+    Species species = static_cast<Species>(species_number);
     
-    //Create player object based on name, species_number
-    //Player my_player(name, species_number);
+    //Create player object based on name and species
+    Player my_player(name, species, 10, 10, 10); //temp 10, 10, 10
     
     //Show intro tutorial
     

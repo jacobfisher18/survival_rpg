@@ -7,14 +7,15 @@
 
 using std::string;
 
-class Player {
+//player inherits from animal
+class Player : public Animal {
 public:
-    Player(string _name, int species_number);
+    Player(string _name, Species _species, int _intelligence, int _vision, int _strength)
+        : Animal(_species, _intelligence, _vision, _strength), name(_name), health(100), hunger(100) {}
 private:
     string name;
     int health;
     int hunger;
-    Animal* my_animal; //manages strength, intelligence, vision attributes
     //inventory of food: a data structure of food objects
     //shelter: an object with name, description, sleep value
 };

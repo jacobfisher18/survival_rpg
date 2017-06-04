@@ -3,15 +3,18 @@
 
 #include <stdio.h>
 #include <string>
+#include "species.cpp"
 
 class Animal {
 public:
-    //Animal(int _intelligence, int _vision, int _strength) : intelligence(_intelligence), vision(_vision), strength(_strength) {}
-    virtual void fight(Animal& enemy) = 0; //purely virtual function, must be implemented by child classes
+    Animal(Species _species, int _intelligence, int _vision, int _strength)
+        : species(_species), intelligence(_intelligence), vision(_vision), strength(_strength) {}
+    void fight(Animal& enemy);
 private:
     int intelligence;
     int vision;
     int strength;
+    Species species;
 };
 
 
