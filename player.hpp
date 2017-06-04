@@ -10,8 +10,7 @@ using std::string;
 //player inherits from animal
 class Player : public Animal {
 public:
-    Player(string _name, Species _species, int _intelligence, int _vision, int _strength)
-        : Animal(_species, _intelligence, _vision, _strength), name(_name), health(100), hunger(100) {}
+    Player(string _name, Species _species) : Animal(_species), name(_name), health(100), hunger(100) {}
 private:
     string name;
     int health;

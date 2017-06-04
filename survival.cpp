@@ -32,7 +32,7 @@ int main() {
     Species species = static_cast<Species>(species_number);
     
     //Create player object based on name and species
-    Player my_player(name, species, 10, 10, 10); //temp 10, 10, 10
+    Player my_player(name, species);
     
     //Show intro tutorial
     
