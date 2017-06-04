@@ -2,6 +2,7 @@
 #define animal_hpp
 
 #include <stdio.h>
+#include <iostream>
 #include <string>
 #include "species.cpp"
 
@@ -12,46 +13,11 @@ const int high_att = 4;
 
 class Animal {
 public:
-    Animal(Species _species) : species(_species) {
-        //set attributes based on species
-        switch (static_cast<int>(_species)) {
-            case 1:
-                intelligence = med_att;
-                vision = med_att;
-                strength = med_att;
-            case 2:
-                intelligence = high_att;
-                vision = low_att;
-                strength = med_att;
-            case 3:
-                intelligence = high_att;
-                vision = med_att;
-                strength = low_att;
-            case 4:
-                intelligence = med_att;
-                vision = high_att;
-                strength = low_att;
-            case 5:
-                intelligence = low_att;
-                vision = high_att;
-                strength = med_att;
-            case 6:
-                intelligence = low_att;
-                vision = med_att;
-                strength = high_att;
-            case 7:
-                intelligence = med_att;
-                vision = low_att;
-                strength = high_att;
-            default:
-                //default animal values
-                intelligence = med_att;
-                vision = med_att;
-                strength = med_att;
-        }
-    }
-    void fight(Animal& enemy);
-private:
+    Animal(Species _species);
+    void print() const; //print species and attributes
+    //void fight(Animal& enemy);
+protected:
+    //protected variables can be accessed by the child class
     int intelligence;
     int vision;
     int strength;

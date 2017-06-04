@@ -1,6 +1,3 @@
-//#include <stdio.h>
-//check if this is neccesary
-
 enum Species {
     Fox = 1,
     Elephant = 2,

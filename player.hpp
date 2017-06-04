@@ -11,6 +11,7 @@ using std::string;
 class Player : public Animal {
 public:
     Player(string _name, Species _species) : Animal(_species), name(_name), health(100), hunger(100) {}
+    void print() const; //overriding parent's implementation
 private:
     string name;
     int health;

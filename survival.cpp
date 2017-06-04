@@ -32,7 +32,13 @@ int main() {
     Species species = static_cast<Species>(species_number);
     
     //Create player object based on name and species
-    Player my_player(name, species);
+    //Player player(name, species);
+    
+    //dev
+    Player player(name, Lion);
+    player.print();
+    Animal animal(Owl);
+    animal.print();
     
     //Show intro tutorial
     
