@@ -1,10 +1,15 @@
 #include <iostream>
 #include <string>
+#include "player.hpp"
 
 using std::cout;
 using std::endl;
 using std::cin;
 using std::string;
+
+//global variables
+//time of day
+//days passed
 
 int main() {
     
@@ -25,7 +30,8 @@ int main() {
     int species_number;
     cin >> species_number;
     
-    //Set up variables, create player object
+    //Create player object based on name, species_number
+    player my_player(name);
     
     //Show intro tutorial
     
