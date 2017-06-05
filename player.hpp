@@ -10,6 +10,10 @@ class Player : public Animal {
 public:
     Player(std::string _name, Species _species) : Animal(_species), name(_name), health(100), hunger(100) {}
     void print() const; //overriding parent's implementation
+    void gather_food();
+    void build_shelter();
+    void fight();
+    void mate();
 private:
     std::string name;
     int health;
