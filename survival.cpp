@@ -7,6 +7,7 @@ using std::endl;
 using std::cin;
 
 //global variables
+bool keep_playing = true;
 //time of day
 //days passed
 
@@ -42,34 +43,46 @@ int main() {
     cout << "SURVIVAL RPG" << endl;
     cout << "This is a survival RPG game. [insert more intro here]" << endl;
     
-    //Options
-    //display information here: time of day, health, hunger
-    cout << "--------------------------------" << endl;
-    cout << "MENU" << endl;
-    cout << "What do you want to do (enter number 1-X): " << endl;
-    cout << "\t 1. Gather food" << endl;
-    cout << "\t 2. Build Sheter" << endl;
-    cout << "\t 3. Fight" << endl;
-    cout << "\t 4. Mate" << endl;
-    int menu_number;
-    cin >> menu_number;
-    
-    switch (menu_number) {
-        case 1:
-            player.gather_food();
-            break;
-        case 2:
-            player.build_shelter();
-            break;
-        case 3:
-            player.fight();
-            break;
-        case 4:
-            player.mate();
-            break;
-        default:
-            break;
+    while (keep_playing == true) {
+        //Options
+        //display information here: time of day, health, hunger
+        cout << "--------------------------------" << endl;
+        cout << "MENU" << endl;
+        cout << "What do you want to do (enter number 1-4): " << endl;
+        cout << "\t 1. Gather food" << endl;
+        cout << "\t 2. Build Sheter" << endl;
+        cout << "\t 3. Fight" << endl;
+        cout << "\t 4. Mate" << endl;
+        cout << "\t 5. Sleep" << endl;
+        cout << "\t 6. Quit" << endl;
+        int menu_number;
+        cin >> menu_number;
+        
+        switch (menu_number) {
+            case 1:
+                player.gather_food();
+                break;
+            case 2:
+                player.build_shelter();
+                break;
+            case 3:
+                player.fight();
+                break;
+            case 4:
+                player.mate();
+                break;
+            case 5:
+                player.sleep();
+                //reset time of day
+                break;
+            case 6:
+                keep_playing = false;
+                break;
+            default:
+                break;
+        }
     }
+    
     
     return 0;
 }
