@@ -48,18 +48,18 @@ int main() {
     
     while (keep_playing == true) {
         //Check if it is time to go to bed
-        //Possible addition: Options (quit game, view stats, etc.)
         cout << "--------------------------------" << endl;
         cout << "MENU " << game_time.to_string() << ", " << days_passed << " days passed" << endl;
         cout << player.get_name() << " | Health: " << player.get_health() << " | Hunger: " << player.get_hunger() << endl;
         cout << "--------------------------------" << endl;
         cout << "What do you want to do (enter number 1-4): " << endl;
         cout << "\t 1. Gather food" << endl;
-        cout << "\t 2. Build Sheter" << endl;
+        cout << "\t 2. Build sheter" << endl;
         cout << "\t 3. Fight" << endl;
         cout << "\t 4. Mate" << endl;
         cout << "\t 5. Sleep" << endl;
-        cout << "\t 6. Quit" << endl;
+        cout << "\t 6. View my stats" << endl;
+        cout << "\t 7. Quit" << endl;
         int menu_number;
         cin >> menu_number;
         
@@ -86,6 +86,9 @@ int main() {
                 days_passed++;
                 break;
             case 6:
+                player.print();
+                break;
+            case 7:
                 keep_playing = false;
                 break;
             default:
