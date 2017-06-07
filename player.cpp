@@ -20,8 +20,9 @@ void Player::build_shelter() {
 }
 
 void Player::fight() {
-    cout << "Health decreased by 10" << endl; //temp
     health -= 10; //temp
+    cout << "Health decreased by 10" << endl; //temp
+    cout << "New health: " << health << endl; //temp
 }
 
 void Player::mate() {

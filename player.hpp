@@ -16,6 +16,10 @@ public:
     void fight();
     void mate();
     void sleep();
+    
+    std::string get_name() const {return name;} //accessor
+    int get_health() const {return health;} //accessor
+    int get_hunger() const {return hunger;} //accessor
 private:
     std::string name;
     int health;

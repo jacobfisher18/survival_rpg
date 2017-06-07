@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "player.hpp"
+#include "time.hpp"
 
 using std::cout;
 using std::endl;
@@ -8,8 +9,10 @@ using std::cin;
 
 //global variables
 bool keep_playing = true;
-//time of day
-//days passed
+Time game_time(8); //start at 8AM
+int days_passed = 0;
+
+std::string format_time(int val); //forward declaration
 
 int main() {
     
@@ -44,10 +47,12 @@ int main() {
     cout << "This is a survival RPG game. [insert more intro here]" << endl;
     
     while (keep_playing == true) {
-        //Options
-        //display information here: time of day, health, hunger
+        //Check if it is time to go to bed
+        //Possible addition: Options (quit game, view stats, etc.)
         cout << "--------------------------------" << endl;
-        cout << "MENU" << endl;
+        cout << "MENU " << game_time.to_string() << ", " << days_passed << " days passed" << endl;
+        cout << player.get_name() << " | Health: " << player.get_health() << " | Hunger: " << player.get_hunger() << endl;
+        cout << "--------------------------------" << endl;
         cout << "What do you want to do (enter number 1-4): " << endl;
         cout << "\t 1. Gather food" << endl;
         cout << "\t 2. Build Sheter" << endl;
@@ -61,19 +66,24 @@ int main() {
         switch (menu_number) {
             case 1:
                 player.gather_food();
+                game_time.progress();
                 break;
             case 2:
                 player.build_shelter();
+                game_time.progress();
                 break;
             case 3:
                 player.fight();
+                game_time.progress();
                 break;
             case 4:
                 player.mate();
+                game_time.progress();
                 break;
             case 5:
                 player.sleep();
-                //reset time of day
+                game_time.set(8);
+                days_passed++;
                 break;
             case 6:
                 keep_playing = false;
@@ -85,8 +95,4 @@ int main() {
     
     
     return 0;
-}
-
-void collect() {
-    //to implement
 }
