@@ -18,7 +18,6 @@ public:
     
     void build_shelter();
     void fight();
-    void mate();
     void sleep();
     
     std::string get_name() const {return name;} //accessor

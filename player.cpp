@@ -8,11 +8,13 @@ void Player::print() const {
     Animal::print(); //Animal's print function
     cout << "Health: " << health << endl;
     cout << "Hunger: " << hunger << endl;
+    cout << "Shelter level: " << shelter.get_level() << endl;
     //print food inventory and shelter
 }
 
 void Player::gather_food() {
-    //to-do
+    Food_item new_food("Strawberry", 5); //get some new food item
+    food_inventory.push_back(new_food);
 }
 
 void Player::build_shelter() {
@@ -23,10 +25,6 @@ void Player::fight() {
     health -= 10; //temp
     cout << "Health decreased by 10" << endl; //temp
     cout << "New health: " << health << endl; //temp
-}
-
-void Player::mate() {
-    //to-do
 }
 
 void Player::sleep() {

@@ -56,10 +56,9 @@ int main() {
         cout << "\t 1. Gather food" << endl;
         cout << "\t 2. Build sheter" << endl;
         cout << "\t 3. Fight" << endl;
-        cout << "\t 4. Mate" << endl;
-        cout << "\t 5. Sleep" << endl;
-        cout << "\t 6. View my stats" << endl;
-        cout << "\t 7. Quit" << endl;
+        cout << "\t 4. Sleep" << endl;
+        cout << "\t 5. View my stats" << endl;
+        cout << "\t 6. Quit" << endl;
         int menu_number;
         cin >> menu_number;
         
@@ -77,18 +76,14 @@ int main() {
                 game_time.progress();
                 break;
             case 4:
-                player.mate();
-                game_time.progress();
-                break;
-            case 5:
                 player.sleep();
                 game_time.set(8);
                 days_passed++;
                 break;
-            case 6:
+            case 5:
                 player.print();
                 break;
-            case 7:
+            case 6:
                 keep_playing = false;
                 break;
             default:
