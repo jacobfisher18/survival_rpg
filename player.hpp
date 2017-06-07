@@ -3,15 +3,19 @@
 
 #include <stdio.h>
 #include <string>
+#include <list>
 #include "animal.hpp"
 #include "shelter.hpp"
+#include "food_item.hpp"
 
 //player inherits from animal
 class Player : public Animal {
 public:
-    Player(std::string _name, Species _species) : Animal(_species), name(_name), health(100), hunger(100), shelter(Shelter()) {}
+    Player(std::string _name, Species _species)
+    : Animal(_species), name(_name), health(100), hunger(100), shelter(Shelter()) {}
     void print() const; //overriding parent's implementation
     void gather_food();
+    
     void build_shelter();
     void fight();
     void mate();
@@ -25,7 +29,7 @@ private:
     int health;
     int hunger;
     Shelter shelter;
-    //inventory of food: a data structure of food objects
+    std::list<Food_item> food_inventory;
 };
 
 #endif

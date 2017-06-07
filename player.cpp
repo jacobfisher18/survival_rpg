@@ -16,7 +16,7 @@ void Player::gather_food() {
 }
 
 void Player::build_shelter() {
-    //to-do
+    shelter.upgrade(); //upgrade shelter one level
 }
 
 void Player::fight() {
