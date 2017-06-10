@@ -63,10 +63,10 @@ int main() {
             std::cout << "MENU " << game_time.to_string() << ", " << days_passed << " days passed" << std::endl;
             std::cout << player.get_name() << " | Health: " << player.get_health() << " | Hunger: " << player.get_hunger() << std::endl;
             std::cout << "--------------------------------" << std::endl;
-            std::cout << "What do you want to do (enter number 1-4): " << std::endl;
-            std::cout << "\t 1. Gather food" << std::endl;
-            std::cout << "\t 2. Build sheter" << std::endl;
-            std::cout << "\t 3. Fight" << std::endl;
+            std::cout << "What do you want to do (enter number of option): " << std::endl;
+            std::cout << "\t 1. Gather food (2 hours)" << std::endl;
+            std::cout << "\t 2. Build sheter (2 hours)" << std::endl;
+            std::cout << "\t 3. Fight (2 hours)" << std::endl;
             std::cout << "\t 4. Sleep" << std::endl;
             std::cout << "\t 5. View my stats" << std::endl;
             std::cout << "\t 6. Quit" << std::endl;
