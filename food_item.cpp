@@ -10,5 +10,5 @@ Food_item::Food_item() {
 }
 
 void Food_item::print() const {
-    cout << name << ": restores " << restore << " health" << endl;
+    std::cout << name << ": restores " << restore << " health" << std::endl;
 }

@@ -1,8 +1,5 @@
 #include "animal.hpp"
 
-using std::cout;
-using std::endl;
-
 Animal::Animal(Species _species) : species(_species) {
     //set attributes based on species
     switch (_species) {
@@ -50,10 +47,10 @@ Animal::Animal(Species _species) : species(_species) {
 }
 
 void Animal::print() const {
-    cout << "Species: " << get_species_string(species) << endl;
-    cout << "Intelligence: " << intelligence << endl;
-    cout << "Vision: " << vision << endl;
-    cout << "Strength: " << strength << endl;
+    std::cout << "Species: " << get_species_string(species) << std::endl;
+    std::cout << "Intelligence: " << intelligence << std::endl;
+    std::cout << "Vision: " << vision << std::endl;
+    std::cout << "Strength: " << strength << std::endl;
 }
 
 std::string Animal::get_species_string(Species species) const {

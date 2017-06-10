@@ -7,9 +7,6 @@
 #include <map>
 #include <stdlib.h> //for rand
 
-using std::cout;
-using std::endl;
-
 const std::map <std::string, char> foods = {{"Strawberry", 3}, {"Raspberry", 4}, {"Blueberry", 4}};
 
 class Food_item {
