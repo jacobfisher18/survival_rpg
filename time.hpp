@@ -8,14 +8,12 @@ class Time {
 public:
     Time(int _military_hrs) : military_hrs(_military_hrs) {};
     
-    //potential future direction: overload ++ operator instead of progress()
-    void progress(); //move forward one hour
+    void progress(int progress_time); //move forward by progress_time hours
     void set(int _military_hrs); //setter
     std::string to_string() const;
+    bool operator<(const Time &other_time) const;
 private:
     int military_hrs; //0 through 23
-    int hrs; //time 1-12
-    int am; //whether or not it's the AM
 };
 
 #endif /* time_hpp */

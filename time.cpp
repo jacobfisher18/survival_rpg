@@ -1,10 +1,11 @@
 #include "time.hpp"
 
-void Time::progress() {
-    if (military_hrs < 23)
-        military_hrs++;
-    else
-        military_hrs = 0;
+void Time::progress(int progress_time) {
+    
+    military_hrs += progress_time;
+    if (military_hrs > 23) {
+        military_hrs %= 24;
+    }
 }
 
 std::string Time::to_string() const {
@@ -17,4 +18,9 @@ std::string Time::to_string() const {
 
 void Time::set(int _military_hrs) {
     military_hrs = _military_hrs;
+}
+
+//returns true if this time is earlier than the given time
+bool Time::operator<(const Time &other_time) const {
+    return military_hrs < other_time.military_hrs;
 }
