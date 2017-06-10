@@ -27,12 +27,15 @@ void Player::print_food_inventory() const {
 void Player::gather_food() {
     Food_item new_food; //uses default constructor to generate random food item
     food_inventory.push_back(new_food);
+    
     cout << "New food item acquired" << endl;
     new_food.print();
 }
 
 void Player::build_shelter() {
     shelter.upgrade(); //upgrade shelter one level
+    
+    cout << "Shelter upgraded to level " << shelter.get_level() << endl;
 }
 
 void Player::fight() {
