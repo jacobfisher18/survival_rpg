@@ -17,6 +17,8 @@ std::string format_time(int val); //forward declaration
 
 int main() {
     
+    srand((int)time(0)); //set a random seed
+    
     //Start Menu: Get name
     cout << "--------------------------------" << endl;
     cout << "SURVIVAL RPG" << endl;

@@ -13,8 +13,14 @@ void Player::print() const {
 }
 
 void Player::print_food_inventory() const {
+    cout << "--------------------------------" << endl;
+    cout << "Food Inventory" << endl;
     for (auto it = food_inventory.begin(); it != food_inventory.end(); ++it) {
         it->print();
+    }
+    
+    if (food_inventory.size() == 0) {
+        cout << "No food owned..." << endl;
     }
 }
 
