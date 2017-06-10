@@ -9,12 +9,20 @@ void Player::print() const {
     cout << "Health: " << health << endl;
     cout << "Hunger: " << hunger << endl;
     cout << "Shelter level: " << shelter.get_level() << endl;
-    //print food inventory and shelter
+    print_food_inventory();
+}
+
+void Player::print_food_inventory() const {
+    for (auto it = food_inventory.begin(); it != food_inventory.end(); ++it) {
+        it->print();
+    }
 }
 
 void Player::gather_food() {
-    Food_item new_food("Strawberry", 5); //get some new food item
+    Food_item new_food; //uses default constructor to generate random food item
     food_inventory.push_back(new_food);
+    cout << "New food item acquired" << endl;
+    new_food.print();
 }
 
 void Player::build_shelter() {

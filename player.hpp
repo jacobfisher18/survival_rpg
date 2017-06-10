@@ -14,6 +14,7 @@ public:
     Player(std::string _name, Species _species)
     : Animal(_species), name(_name), health(100), hunger(100), shelter(Shelter()) {}
     void print() const; //overriding parent's implementation
+    void print_food_inventory() const;
     void gather_food();
     
     void build_shelter();
