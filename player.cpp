@@ -22,6 +22,8 @@ void Player::print_food_inventory() const {
 }
 
 void Player::gather_food() {
+    std::cout << "Gathering food depends on your vision attribute..." << std::endl;
+    
     Food_item new_food; //uses default constructor to generate random food item
     food_inventory.push_back(new_food);
     
@@ -30,13 +32,18 @@ void Player::gather_food() {
 }
 
 void Player::build_shelter() {
+    std::cout << "Building your shelter depends on your intelligence attribute..." << std::endl;
+    
     shelter.upgrade(); //upgrade shelter one level
     
     std::cout << "Shelter upgraded to level " << shelter.get_level() << std::endl;
 }
 
 void Player::fight() {
+    std::cout << "Fighting depends on your strength attribute..." << std::endl;
+    
     health -= 10; //temp
+    
     std::cout << "Health decreased by 10" << std::endl; //temp
     std::cout << "New health: " << health << std::endl; //temp
 }

@@ -20,7 +20,7 @@ int main() {
     std::cout << "SURVIVAL RPG" << std::endl;
     std::cout << "What is your animal name?" << std::endl;
     std::string name;
-    std::cin >> name;
+    getline(std::cin, name);
     
     //Start Menu: Get species
     std::cout << "--------------------------------" << std::endl;
