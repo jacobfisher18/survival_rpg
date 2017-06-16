@@ -1,4 +1,5 @@
 #include "player.hpp"
+#include "utility.cpp"
 
 void Player::print() const {
     std::cout << "Name: " << name << std::endl;
@@ -50,12 +51,11 @@ void Player::build_shelter() {
     else {
         std::cout << "You failed to upgrade your shelter. Maybe try again when you're intelligence is higher." << std::endl;
     }
-    
-    
 }
 
 void Player::fight() {
     std::cout << "Fighting depends on your strength attribute..." << std::endl;
+    
     
     health -= 10; //temp
     
@@ -77,4 +77,9 @@ void Player::sleep() {
         health = new_health;
         std::cout << "Your health is now at " << health << std::endl;
     }
+    
+    //50% chance of each attribute increasing
+    chance_execute([&](){intelligence++; std::cout << "Intelligence increased to " << intelligence << "!" << std::endl;});
+    chance_execute([&](){vision++; std::cout << "Vision increased to " << vision << "!" << std::endl;});
+    chance_execute([&](){strength++; std::cout << "Strength increased to " << strength << "!" << std::endl;});
 }
