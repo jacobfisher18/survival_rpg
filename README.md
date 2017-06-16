@@ -1,7 +1,8 @@
 # survival_rpg
-PIC10C Final Project, a C++ rpg game about surviving in nature
+*PIC10C Final Project, a C++ rpg game about surviving in nature*
 
 ### PIC10C Topics Implemented in This Program
+---
 
 ##### Version Control
 I used git and github for this project, continuously committing my changes. At one point I created a branch to try out a feature, and then merged the branch into master.
@@ -41,8 +42,16 @@ chance_execute([&](){
 ~~~~
 
 ##### Function Pointers
-I used
+I used a function pointer to specify the comparison function in a min_element generic algorithm.
+~~~~
+bool (*cmp)(const Food_item &a, const Food_item &b) = &compare_foods;
+auto min_food = std::min_element(food_inventory.begin(), food_inventory.end(), cmp);
+~~~~
 
-##### Other Topics Used
+##### Other Course Topics Used
 - auto keyword
 - initializer lists
+
+### Future Direction
+---
+This program is just the back end for a survival RPG game. A more enjoyable experience would involve a front-end that includes graphics, buttons, and better interactivity.
