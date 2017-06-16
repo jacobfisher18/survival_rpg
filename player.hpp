@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <string>
 #include <list>
+#include <stdlib.h> //for rand
 #include "animal.hpp"
 #include "shelter.hpp"
 #include "food_item.hpp"

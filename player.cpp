@@ -22,21 +22,36 @@ void Player::print_food_inventory() const {
 }
 
 void Player::gather_food() {
-    std::cout << "Gathering food depends on your vision attribute..." << std::endl;
+    std::cout << "Gathering food depends on your vision attribute (" << vision << ") vision..." << std::endl;
     
-    Food_item new_food; //uses default constructor to generate random food item
-    food_inventory.push_back(new_food);
-    
-    std::cout << "New food item acquired" << std::endl;
-    new_food.print();
+    //while total food value is under vision value, generate another random food
+    int totalRestore = 0;
+    while (totalRestore < vision) {
+        Food_item new_food; //use default constructor to generate random food item
+        food_inventory.push_back(new_food);
+        std::cout << "New food item acquired: ";
+        new_food.print();
+        totalRestore += new_food.getRestore();
+    }
 }
 
 void Player::build_shelter() {
-    std::cout << "Building your shelter depends on your intelligence attribute..." << std::endl;
+    std::cout << "Building your shelter depends on your intelligence attribute (" << intelligence << "% chance of success)..." << std::endl;
     
-    shelter.upgrade(); //upgrade shelter one level
+    //chance of successfully upgrading one level is randomly determined (but based on intelligence)
+    int randNum = rand() % 100 + 1; //random number between 1 and 100
     
-    std::cout << "Shelter upgraded to level " << shelter.get_level() << std::endl;
+    //higher intelligence increases the chance of this being true
+    if (randNum < intelligence) {
+        shelter.upgrade(); //upgrade shelter one level
+        std::cout << "Good work! Shelter upgraded to level " << shelter.get_level() << std::endl;
+    }
+    
+    else {
+        std::cout << "You failed to upgrade your shelter. Maybe try again when you're intelligence is higher." << std::endl;
+    }
+    
+    
 }
 
 void Player::fight() {

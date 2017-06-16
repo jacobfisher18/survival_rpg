@@ -43,7 +43,10 @@ int main() {
     //Present intro and tutorial
     std::cout << "--------------------------------" << std::endl;
     std::cout << "SURVIVAL RPG" << std::endl;
-    std::cout << "This is a survival RPG game. [insert more intro here]" << std::endl;
+    std::cout << "This is a survival RPG game." << std::endl;
+    std::cout << "You are an animal in the wild, and you need to work hard to survive." << std::endl;
+    std::cout << "You have a species, attributes, a food inventory, and a shelter." << std::endl;
+    std::cout << "Explore the world, try to thrive, and most importantly, don't let your health or hunger get to 0, or you will die." << std::endl;
     
     //keep going if player hasen't exited
     while (keep_playing == true) {
