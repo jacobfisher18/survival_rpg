@@ -17,9 +17,18 @@ I didn't manage memory on the heap, so I didn't have to worry about this. Many o
 
 ##### Iterators and Generic Algorithms
 I used iterators and generic algorithms to traverse containers. One example was in the Food_item constructor.
-
 ~~~~
 auto it = foods.begin(); //iterator to beginning of the foods map
 
 std::advance(it, rand() % foods.size()); //advance the iterator to random spot in map
+~~~~
+
+##### Templating and Lambda Functions
+I wrote a templated function chance_execute that has a 50% chance of executing a function pointer, functor, or lambda function.
+
+~~~~
+template <typename FUNC>
+void chance_execute(FUNC func) {
+    if ((rand() % 2) == 0) {func();};
+}
 ~~~~
