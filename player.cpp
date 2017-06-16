@@ -86,11 +86,24 @@ void Player::eat() {
 void Player::fight() {
     std::cout << "Fighting depends on your strength attribute..." << std::endl;
     
+    int rand_num = rand() % 2;
     
-    health -= 10; //temp
+    //50% chance of winning
+    if (rand_num == 0) {
+        std::cout << "You won! Strength increased by 5" << std::endl;
+        strength+=5;
+    }
     
-    std::cout << "Health decreased by 10" << std::endl; //temp
-    std::cout << "New health: " << health << std::endl; //temp
+    else {
+        int decrease_range = 50 - strength;
+        if (decrease_range < 5)
+            decrease_range = 5;
+        
+        int health_decrease = rand() % decrease_range + 1;
+        health -= health_decrease;
+        
+        std::cout << "You lost, health decreased by " << health_decrease << std::endl;
+    }
 }
 
 void Player::sleep() {

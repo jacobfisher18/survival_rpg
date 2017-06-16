@@ -39,3 +39,10 @@ chance_execute([&](){
     std::cout << "Intelligence increased to " << intelligence << "!" << std::endl;
 });
 ~~~~
+
+##### Function Pointers
+I used
+
+##### Other Topics Used
+- auto keyword
+- initializer lists
