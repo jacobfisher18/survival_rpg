@@ -80,18 +80,22 @@ int main() {
                 case 1:
                     player.gather_food();
                     game_time.progress(2);
+                    player.decrease_hunger_by(4); //decrease hunger by 2 per hour
                     break;
                 case 2:
                     player.build_shelter();
                     game_time.progress(2);
+                    player.decrease_hunger_by(4); //decrease hunger by 2 per hour
                     break;
                 case 3:
                     player.fight();
                     game_time.progress(2);
+                    player.decrease_hunger_by(4); //decrease hunger by 2 per hour
                     break;
                 case 4:
                     player.sleep();
                     game_time.set(8);
+                    player.decrease_hunger_by(16); //decrease hunger by 2 per hour
                     days_passed++;
                     break;
                 case 5:
@@ -102,6 +106,13 @@ int main() {
                     break;
                 default:
                     break;
+            }
+            
+            //check for death
+            if ((player.get_health() <= 0) || (player.get_hunger() <= 0)) {
+                std::cout << "--------------------------------" << std::endl;
+                std::cout << "Oops, you died! Your health or hunger got too low." << std::endl;
+                keep_playing = false;
             }
         }
     }
