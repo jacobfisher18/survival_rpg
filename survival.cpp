@@ -70,9 +70,10 @@ int main() {
             std::cout << "\t 1. Gather food (2 hours)" << std::endl;
             std::cout << "\t 2. Build sheter (2 hours)" << std::endl;
             std::cout << "\t 3. Fight (2 hours)" << std::endl;
-            std::cout << "\t 4. Sleep" << std::endl;
-            std::cout << "\t 5. View my stats" << std::endl;
-            std::cout << "\t 6. Quit" << std::endl;
+            std::cout << "\t 4. Eat" << std::endl;
+            std::cout << "\t 5. Sleep" << std::endl;
+            std::cout << "\t 6. View my stats" << std::endl;
+            std::cout << "\t 7. Quit" << std::endl;
             int menu_number;
             std::cin >> menu_number;
             
@@ -93,15 +94,18 @@ int main() {
                     player.decrease_hunger_by(4); //decrease hunger by 2 per hour
                     break;
                 case 4:
+                    player.eat(); //doesn't take any time
+                    break;
+                case 5:
                     player.sleep();
                     game_time.set(8);
                     player.decrease_hunger_by(16); //decrease hunger by 2 per hour
                     days_passed++;
                     break;
-                case 5:
+                case 6:
                     player.print();
                     break;
-                case 6:
+                case 7:
                     keep_playing = false;
                     break;
                 default:

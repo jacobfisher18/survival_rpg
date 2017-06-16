@@ -25,10 +25,17 @@ std::advance(it, rand() % foods.size()); //advance the iterator to random spot i
 
 ##### Templating and Lambda Functions
 I wrote a templated function chance_execute that has a 50% chance of executing a function pointer, functor, or lambda function.
-
 ~~~~
 template <typename FUNC>
 void chance_execute(FUNC func) {
     if ((rand() % 2) == 0) {func();};
 }
+~~~~
+
+I used this function throughout the program, for example with a lambda function as follows.
+~~~~
+chance_execute([&](){
+    intelligence++;
+    std::cout << "Intelligence increased to " << intelligence << "!" << std::endl;
+});
 ~~~~

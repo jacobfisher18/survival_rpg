@@ -53,6 +53,36 @@ void Player::build_shelter() {
     }
 }
 
+//our function to compare two food items
+bool compare_foods(const Food_item &a, const Food_item &b) {
+    return (a.getRestore() < b.getRestore());
+}
+
+//eat the food with the minimum restore value
+void Player::eat() {
+    
+    //a function pointer, the comparison object we'll use in our min_element algorithm
+    bool (*cmp)(const Food_item &a, const Food_item &b) = &compare_foods;
+    
+    if (food_inventory.size() > 0) {
+        auto min_food = std::min_element(food_inventory.begin(), food_inventory.end(), cmp); //find minimum restore value element
+        
+        std::cout << "You ate a "; min_food->print();
+        
+        hunger += min_food->getRestore(); //increase hunger bar
+        
+        if (hunger > 100)
+            hunger = 100; //limit hunger at 100
+        
+        food_inventory.erase(min_food); //erase the food from the list
+        
+    }
+    
+    else {
+        std::cout << "You have no food" << std::endl;
+    }
+}
+
 void Player::fight() {
     std::cout << "Fighting depends on your strength attribute..." << std::endl;
     

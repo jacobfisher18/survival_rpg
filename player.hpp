@@ -5,6 +5,7 @@
 #include <string>
 #include <list>
 #include <stdlib.h> //for rand
+#include <algorithm>
 #include "animal.hpp"
 #include "shelter.hpp"
 #include "food_item.hpp"
@@ -20,14 +21,13 @@ public:
     
     void build_shelter();
     void fight();
+    void eat();
     void sleep();
     
     std::string get_name() const {return name;} //accessor
     int get_health() const {return health;} //accessor
     int get_hunger() const {return hunger;} //accessor
-    //void set_health(const int& newHealth) {health = newHealth;} //accessor
-    //void set_hunger(const int& newHunger) {hunger = newHunger;} //accessor
-    void decrease_hunger_by(const int& decreaseVal) {hunger -= decreaseVal;} //accessor
+    void decrease_hunger_by(const int& decreaseVal) {hunger -= decreaseVal;}
 private:
     std::string name;
     int health;
